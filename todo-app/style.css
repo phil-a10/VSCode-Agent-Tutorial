@@ -8,25 +8,60 @@ body {
 .container {
     max-width: 400px;
     margin: 50px auto;
-    background: #fff;
-    padding: 30px 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
 
+    /* Theme variables */
+    :root {
+        --bg-color: #f4f4f4;
+        --container-bg: #fff;
+        --text-color: #333;
+        --input-bg: #fff;
+        --input-border: #ccc;
+        --button-bg: #007bff;
+        --button-text: #fff;
+    }
+
+    .theme-dark {
+        --bg-color: #181a1b;
+        --container-bg: #23272b;
+        --text-color: #f4f4f4;
+        --input-bg: #23272b;
+        --input-border: #444;
+        --button-bg: #375a7f;
+        --button-text: #fff;
+    }
+
+    .theme-light {
+        --bg-color: #f4f4f4;
+        --container-bg: #fff;
+        --text-color: #333;
+        --input-bg: #fff;
+        --input-border: #ccc;
+        --button-bg: #007bff;
+        --button-text: #fff;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: var(--bg-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+        transition: background 0.2s, color 0.2s;
+    }
 h1 {
     text-align: center;
-    color: #333;
-}
-
-.input-group {
-    display: flex;
-    margin-bottom: 20px;
+        max-width: 400px;
+        margin: 50px auto;
+        background: var(--container-bg);
+        padding: 30px 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: background 0.2s;
 }
 
 #todo-input {
-    flex: 1;
-    padding: 10px;
+        text-align: center;
+        color: var(--text-color);
     border: 1px solid #ccc;
     border-radius: 4px 0 0 4px;
     outline: none;
@@ -34,20 +69,24 @@ h1 {
 
 #add-btn {
     padding: 10px 20px;
-    border: none;
-    background: #007bff;
-    color: #fff;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-    transition: background 0.2s;
-}
+    #todo-input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid var(--input-border);
+        background: var(--input-bg);
+        color: var(--text-color);
+        border-radius: 4px 0 0 4px;
+        outline: none;
+        transition: background 0.2s, color 0.2s, border 0.2s;
+    }
 
-#add-btn:hover {
-    background: #0056b3;
-}
-
-#todo-list {
-    list-style: none;
+    #add-btn {
+        padding: 10px 20px;
+        border: none;
+        background: var(--button-bg);
+        color: var(--button-text);
+        border-radius: 0 4px 4px 0;
+        transition: background 0.2s, color 0.2s;
     padding: 0;
 }
 
